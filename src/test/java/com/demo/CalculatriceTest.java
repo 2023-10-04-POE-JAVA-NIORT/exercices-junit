@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatriceTest
@@ -50,4 +52,11 @@ public class CalculatriceTest
         });
     }
 
+    @Test
+    public void testGetNombresImpairs(){
+        ArrayList<Integer> nombresImpairs = Calculatrice.getNombresImpairs(5);
+        assertEquals(3, nombresImpairs.size());
+        assertTrue(nombresImpairs.contains(3));
+        assertFalse(nombresImpairs.contains(2));
+    }
 }
